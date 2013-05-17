@@ -11,7 +11,7 @@ class Route {
 		$control = empty($_GET['c']) ? 'Index' : trim($_GET['c']);
 		//设置默认的Action
 		$action = empty($_GET['a']) ? 'index' : trim($_GET['a']);
-		$controlBasePath = dirname(__FILE__) . '/../../App/Module/Control';
+		$controlBasePath = APP_PATH . '/App/Module/Control';
 		$controlFilePath = $controlBasePath . $control . '.php';
 
 		if (is_file($controlFilePath)) {
