@@ -8,10 +8,10 @@
 class Route {
 	public static function run() {
 		//设置默认的控制器
-		$control = empty($_GET['c']) ? 'Index' : trim($_GET['c']);
+		$control = empty($_GET['c']) ? C('defaultControl') : trim($_GET['c']);
 		//设置默认的Action
-		$action = empty($_GET['a']) ? 'index' : trim($_GET['a']);
-		$controlBasePath = APP_PATH . '/App/Module/Control';
+		$action = empty($_GET['a']) ? C('defaultAction') : trim($_GET['a']);
+		$controlBasePath = APP_PATH . '/App/Module/Control/';
 		$controlFilePath = $controlBasePath . $control . '.php';
 
 		if (is_file($controlFilePath)) {
